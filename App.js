@@ -1,49 +1,49 @@
 
-import React, {useState} from 'react';
-import {StyleSheet,View,Text, FlatList} from 'react-native';
-
+import React, { useState } from 'react';
+import { StyleSheet, View, Text, FlatList } from 'react-native';
+import Header from './component/Header.js';
 const App = () => {
 
   const [todos, setTodos] = useState([
-    {text:"uyan",key:1},
-    {text:"kahvaltı yap",key:2},
-    {text:"işe git",key:3},
+    { text: "uyan", key: 1 },
+    { text: "kahvaltı yap", key: 2 },
+    { text: "işe git", key: 3 },
   ])
 
   return (
-     <View style={styles.container}>
+    <View style={styles.container}>
 
-       {/* header */}
+      <Header></Header>
       <View style={styles.content}>
 
-      <View style={styles.list}>
-        <FlatList  data={todos} renderItem={({item})=>(
-          <Text>{item.text}</Text>
-        )} />
+        <View style={styles.list}>
+          <FlatList data={todos} renderItem={({ item }) => (
+            <Text>{item.text}</Text>
+          )} />
         </View>
 
       </View>
-       {/* todo form */}
-       <Text>hiii</Text>
+      {/* todo form */}
+      <Text>hiii</Text>
 
 
-     </View>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container:{
-    flex:1,
-    backgroundColor:'#fff222'
+  container: {
+    flex: 1,
+    backgroundColor: '#fff'
   },
-  content:{
-    padding:40,
-    backgroundColor:'#12a12a',
-    flex:1
+  content: {
+    padding: 40,
+    // backgroundColor: '#12a12a',
+    flex: 1
   },
-  list:{
-    marginTop:20,
-    backgroundColor:'#789abc'
+  list: {
+    marginTop: 20,
+    // backgroundColor: '#789abc'
   }
 });
 

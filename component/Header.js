@@ -1,50 +1,31 @@
 
-import React, {useState} from 'react';
-import {StyleSheet,View,Text, FlatList} from 'react-native';
+import React from 'react';
+import {StyleSheet,View,Text} from 'react-native';
 
-const App = () => {
+const Header = () => {
 
-  const [todos, setTodos] = useState([
-    {text:"uyan",key:1},
-    {text:"kahvaltı yap",key:2},
-    {text:"işe git",key:3},
-  ])
+  
 
   return (
-     <View style={styles.container}>
-
-       {/* header */}
-      <View style={styles.content}>
-
-      <View style={styles.list}>
-        <FlatList  data={todos} renderItem={({item})=>(
-          <Text>{item.text}</Text>
-        )} />
-        </View>
-
-      </View>
-       {/* todo form */}
-       <Text>hiii</Text>
-
-
+     <View style={styles.header}>
+         <Text style={styles.title}>My Todos</Text>
      </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container:{
-    flex:1,
-    backgroundColor:'#fff222'
+  header:{
+    height:80,
+    paddingTop:30,
+    backgroundColor:'coral'
   },
-  content:{
-    padding:40,
-    backgroundColor:'#12a12a',
-    flex:1
-  },
-  list:{
-    marginTop:20,
-    backgroundColor:'#789abc'
+  title:{
+      textAlign:'center',
+      fontSize:20,
+      color:'#fff',
+      fontWeight:'bold',
+      fontFamily:'Cochin'
   }
 });
 
-export default App;
+export default Header;
